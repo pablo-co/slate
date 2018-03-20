@@ -277,60 +277,6 @@ Debes de reemplazar <code>sk_live_BQokikJOvBiI2HlWgH4olfQ2</code> con tu clave d
 <p>Cada solicitud de API tiene un identificador de solicitud asociado. Puedes encontrar este valor en los encabezados de respuesta, bajo <code>Request-Id</code>. Si necesitas contactarnos sobre una solicitud específica, proporcionar el identificador de la solicitud asegurará la resolución más rápida posible.</p>
 <h1 id='errores'>Errores</h1>
 <p>ShipIt usa códigos de respuesta HTTP convencionales para indicar el éxito o el fracaso de una solicitud API. En general: los códigos en el rango <code>2xx</code> indican éxito. Los códigos en el rango <code>4xx</code> indican un error que falló dada la información provista (p. Ej., Se omitió un parámetro requerido, se produjo un error en la carga, etc.). Los códigos en el rango <code>5xx</code> indican un error con los servidores de ShipIt (estos son raros).</p>
-
-<p>Sin embargo, no todos los errores se mapean limpiamente en los códigos de respuesta HTTP. Cuando una solicitud es válida pero no se completa con éxito (por ejemplo, el código de rastreo es incorrecto), devolvemos un código de error <code>402</code>. Para entender por qué se rechaza una tarjeta, consulte la lista de códigos de rechazo de ShipIt.</p>
-
-<table><thead>
-<tr>
-<th>Error Code</th>
-<th>Meaning</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>400</td>
-<td>Bad Request -- Your request is invalid.</td>
-</tr>
-<tr>
-<td>401</td>
-<td>Unauthorized -- Your API key is wrong.</td>
-</tr>
-<tr>
-<td>403</td>
-<td>Forbidden -- The kitten requested is hidden for administrators only.</td>
-</tr>
-<tr>
-<td>404</td>
-<td>Not Found -- The specified kitten could not be found.</td>
-</tr>
-<tr>
-<td>405</td>
-<td>Method Not Allowed -- You tried to access a kitten with an invalid method.</td>
-</tr>
-<tr>
-<td>406</td>
-<td>Not Acceptable -- You requested a format that isn&#39;t json.</td>
-</tr>
-<tr>
-<td>410</td>
-<td>Gone -- The kitten requested has been removed from our servers.</td>
-</tr>
-<tr>
-<td>418</td>
-<td>I&#39;m a teapot.</td>
-</tr>
-<tr>
-<td>429</td>
-<td>Too Many Requests -- You&#39;re requesting too many kittens! Slow down!</td>
-</tr>
-<tr>
-<td>500</td>
-<td>Internal Server Error -- We had a problem with our server. Try again later.</td>
-</tr>
-<tr>
-<td>503</td>
-<td>Service Unavailable -- We&#39;re temporarily offline for maintenance. Please try again later.</td>
-</tr>
-</tbody></table>
 <h1 id='ordenes'>Ordenes</h1><h2 id='el-objeto-orden'>El objeto Orden</h2>
 <p>Las ordenes representan un grupo de artículos que deben de ser enviados a un cliente. Dentro de la plataforma es posible elegir el número y tamaño de las cajas en las que se van a enviar los artículos.</p>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
